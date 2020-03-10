@@ -1,20 +1,19 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatGridListModule } from "@angular/material/grid-list";
+import { AppMaterialModule } from "./app-material/app-material.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NavbarComponent } from "./navbar/navbar.component";
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { TopAnimeComponent } from "./top-anime/top-anime.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent, TopAnimeComponent],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatGridListModule,
-    FlexLayoutModule
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

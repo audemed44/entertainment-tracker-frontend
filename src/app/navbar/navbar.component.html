@@ -1,3 +1,25 @@
 <mat-toolbar>
-  MyAnimeList
+  <mat-toolbar-row>
+    <div fxFlex="66%">MyAnimeList</div>
+    <div
+      fxFlex
+      fxLayout
+      fxLayoutAlign="flex-end"
+      fxLayoutGap="15px"
+      *ngIf="isAuthenticated"
+    >
+      <div>Audemed</div>
+      <div (click)="isAuthenticated = !isAuthenticated">Logout</div>
+    </div>
+    <div
+      fxFlex
+      fxLayout
+      fxLayoutAlign="flex-end"
+      fxLayoutGap="15px"
+      *ngIf="!isAuthenticated"
+    >
+      <div (click)="isAuthenticated = !isAuthenticated">Login</div>
+      <div>Sign Up</div>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
