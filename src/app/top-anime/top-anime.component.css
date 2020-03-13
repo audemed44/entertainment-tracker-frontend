@@ -1,0 +1,5 @@
+.top-anime-container {
+  position: relative;
+  overflow: auto;
+  max-width: 80%;
+}

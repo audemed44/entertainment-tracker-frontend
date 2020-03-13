@@ -1,0 +1,38 @@
+.example-card {
+  width: 280px;
+  margin: 10px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.card-deck-container {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 2px;
+  padding: 10px 10px 30px;
+  margin: auto;
+  position: relative;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.card-deck-container::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+mat-card img {
+  object-fit: contain; /*this makes the image in src fit to the size specified below*/
+  height: 150px;
+}
+
+mat-card-actions {
+  margin: 10px;
+  text-align: center;
+}

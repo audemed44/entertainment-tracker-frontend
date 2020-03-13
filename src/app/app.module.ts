@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { TopAnimeComponent } from "./top-anime/top-anime.component";
 import { HttpClientModule } from "@angular/common/http";
+import { TopAnimeCardComponent } from './top-anime-card/top-anime-card.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, TopAnimeComponent],
+  declarations: [AppComponent, NavbarComponent, TopAnimeComponent, TopAnimeCardComponent],
   imports: [
     HttpClientModule,
     BrowserModule,

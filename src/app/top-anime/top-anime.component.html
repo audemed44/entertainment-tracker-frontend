@@ -1,3 +1,43 @@
-<ul>
+<!-- <ul>
   <li *ngFor="let anime of topAnime">{{ anime.title }}</li>
-</ul>
+</ul> -->
+<div class="top-anime-container" fxFlex="50">
+  <mat-table
+    [dataSource]="topAnime"
+    fxFlexAlign="center"
+    class="mat-elevation-z8"
+  >
+    <!-- User name Definition -->
+    <ng-container matColumnDef="mal-rank">
+      <mat-header-cell *matHeaderCellDef> MAL Rank </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.rank }} </mat-cell>
+    </ng-container>
+
+    <!-- Age Definition -->
+
+    <!-- Title Definition -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <img src="{{ row.image_url }}" height="50px" width="70px" />
+        <a href="{{ row.url }}">{{ row.title }}</a>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="mal-score">
+      <mat-header-cell *matHeaderCellDef> MAL Score </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        {{ row.score }}
+      </mat-cell>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <mat-header-row
+      *matHeaderRowDef="['mal-rank', 'title', 'mal-score']"
+    ></mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: ['mal-rank', 'title', 'mal-score']"
+      class="mat-elevation-z8"
+    ></mat-row>
+  </mat-table>
+</div>

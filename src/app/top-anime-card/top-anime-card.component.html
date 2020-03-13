@@ -1,0 +1,25 @@
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="space-evenly stretch"
+  class="card-deck-container mat-elevation-z8"
+>
+  <mat-card class="example-card" *ngFor="let anime of topAnime">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ anime.title }}</mat-card-title>
+      <mat-card-subtitle>Rank #{{ anime.rank }} on MAL</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ anime.image_url }}" alt="{{ anime.title }}" />
+    <mat-card-content>
+      <p>
+        Type: {{ anime.type }} <br />
+        Episodes: {{ anime.episodes }} <br />
+        MAL Score: {{ anime.score }} <br />
+        Members: {{ anime.members }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-mini-fab="accent">+</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
