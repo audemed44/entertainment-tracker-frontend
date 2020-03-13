@@ -1,16 +1,20 @@
 <div
   fxLayout="row wrap"
   fxLayoutAlign="space-evenly stretch"
-  class="card-deck-container mat-elevation-z8"
+  class="card-deck-container mat-elevation-z11"
 >
-  <mat-card class="example-card" *ngFor="let anime of topAnime">
+  <mat-card
+    class="example-card"
+    *ngFor="let anime of topAnime"
+    fxLayout="column"
+  >
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{ anime.title }}</mat-card-title>
       <mat-card-subtitle>Rank #{{ anime.rank }} on MAL</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="{{ anime.image_url }}" alt="{{ anime.title }}" />
-    <mat-card-content>
+    <mat-card-content fxFlex="1 1 100%">
       <p>
         Type: {{ anime.type }} <br />
         Episodes: {{ anime.episodes }} <br />
@@ -22,4 +26,11 @@
       <button mat-mini-fab="accent">+</button>
     </mat-card-actions>
   </mat-card>
+  <div fxLayout="column" fxLayoutAlign="start start">
+    <button mat-mini-fab color="warn" (click)="goNextPage()" *ngIf="initLoaded">
+      <mat-icon>arrow_downward</mat-icon>
+    </button>
+  </div>
+
+  <mat-spinner *ngIf="loadingFlag"></mat-spinner>
 </div>

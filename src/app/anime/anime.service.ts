@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 @Injectable({
   providedIn: "root"
 })
-export class TopAnimeService {
+export class AnimeService {
   constructor(private http: HttpClient) {}
   apiUrl = "https://api.jikan.moe/v3/top/anime";
   // httpOptions = {
@@ -16,5 +16,9 @@ export class TopAnimeService {
   // };
   getTopAnime() {
     return this.http.get(this.apiUrl);
+  }
+  getTopAnimeByPage(page: number) {
+    console.log(this.apiUrl + "/" + page.toString());
+    return this.http.get(this.apiUrl + "/" + page.toString());
   }
 }

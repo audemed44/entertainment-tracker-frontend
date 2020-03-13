@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { TopAnimeService } from "../top-anime.service";
+import { AnimeService } from "../anime.service";
 import { TopAnimeModel } from "./top-anime-model";
 @Component({
   selector: "app-top-anime",
@@ -7,7 +7,7 @@ import { TopAnimeModel } from "./top-anime-model";
   styleUrls: ["./top-anime.component.css"]
 })
 export class TopAnimeComponent implements OnInit {
-  constructor(private topAnimeService: TopAnimeService) {}
+  constructor(private topAnimeService: AnimeService) {}
   topAnime: TopAnimeModel[];
   getTopAnime() {
     this.topAnimeService.getTopAnime().subscribe(data => {

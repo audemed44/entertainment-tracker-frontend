@@ -1,5 +1,5 @@
 .example-card {
-  width: 280px;
+  width: 220px;
   margin: 10px;
 }
 
@@ -33,6 +33,5 @@ mat-card img {
 }
 
 mat-card-actions {
-  margin: 10px;
   text-align: center;
 }

@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <mat-toolbar-row>
     <div fxFlex="66%">MyAnimeList</div>
     <div
@@ -8,8 +8,10 @@
       fxLayoutGap="15px"
       *ngIf="isAuthenticated"
     >
-      <div>Audemed</div>
-      <div (click)="isAuthenticated = !isAuthenticated">Logout</div>
+      <button mat-raised-button>Audemed</button>
+      <button mat-raised-button (click)="isAuthenticated = !isAuthenticated">
+        Logout
+      </button>
     </div>
     <div
       fxFlex
@@ -18,8 +20,14 @@
       fxLayoutGap="15px"
       *ngIf="!isAuthenticated"
     >
-      <div (click)="isAuthenticated = !isAuthenticated">Login</div>
-      <div>Sign Up</div>
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="isAuthenticated = !isAuthenticated"
+      >
+        Login
+      </button>
+      <button mat-raised-button>Sign Up</button>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
