@@ -6,7 +6,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class AnimeService {
   constructor(private http: HttpClient) {}
-  apiUrl = "https://api.jikan.moe/v3/top/anime";
+  topAnimeApiUrl = "https://api.jikan.moe/v3/top/anime";
+  animeDetailApiUrl = "https://api.jikan.moe/v3/anime";
   // httpOptions = {
   //   headers: new HttpHeaders({
   //     "Access-Control-Allow-Origin": "*",
@@ -15,10 +16,15 @@ export class AnimeService {
   //   })
   // };
   getTopAnime() {
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.topAnimeApiUrl);
   }
   getTopAnimeByPage(page: number) {
-    console.log(this.apiUrl + "/" + page.toString());
-    return this.http.get(this.apiUrl + "/" + page.toString());
+    console.log(this.topAnimeApiUrl + "/" + page.toString());
+    return this.http.get(this.topAnimeApiUrl + "/" + page.toString());
+  }
+
+  getDetailById(mal_id: number) {
+    console.log(this.animeDetailApiUrl + "/" + mal_id.toString());
+    return this.http.get(this.animeDetailApiUrl + "/" + mal_id.toString());
   }
 }

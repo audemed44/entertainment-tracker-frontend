@@ -1,0 +1,79 @@
+<div
+  fxLayout="row wrap"
+  class="anime-detail-container mat-elevation-z11"
+  fxLayoutAlign="start start"
+  fxLayoutGap="5px"
+>
+  <div *ngIf="loading" fxFlex="100%" fxLayout="column">
+    <mat-spinner></mat-spinner>
+  </div>
+  <mat-toolbar *ngIf="!loading" fxFlex="100%" fxLayout="row">{{
+    animeDetails.title
+  }}</mat-toolbar>
+  <div
+    *ngIf="!loading"
+    fxFlex="29%"
+    fxFlex.lt-md="100%"
+    fxLayout="row"
+    fxFlexAlign="stretch"
+  >
+    <div fxLayout="column">
+      <mat-card
+        fxLayout="column wrap"
+        class="anime-details-card"
+        fxLayoutGap="10px"
+        fxLayoutAlign="center center"
+      >
+        <img mat-card-image src="{{ animeDetails.image_url }}" />
+        <mat-card-content
+          fxFlex="1 1 100%"
+          fxLayout="column"
+          fxLayoutGap="10px"
+        >
+          <mat-expansion-panel>
+            <mat-expansion-panel-header
+              >Alternative Titles</mat-expansion-panel-header
+            >
+            <mat-list>
+              <mat-list-item
+                >English: {{ animeDetails.title_english }}</mat-list-item
+              >
+              <mat-list-item>
+                Synonyms: {{ animeDetails.title_synonyms }}
+              </mat-list-item>
+              <mat-list-item>
+                Japanese: {{ animeDetails.title_japanese }}
+              </mat-list-item></mat-list
+            ></mat-expansion-panel
+          >
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>Information</mat-expansion-panel-header>
+
+            <mat-list>
+              <mat-list-item>Type: {{ animeDetails.type }}</mat-list-item>
+              <mat-list-item
+                >Episodes: {{ animeDetails.episodes }}</mat-list-item
+              >
+              <mat-list-item>Status: {{ animeDetails.status }}</mat-list-item>
+              <mat-list-item>Aired: {{ animeDetails.aired }}</mat-list-item>
+              <mat-list-item
+                >Premiered: {{ animeDetails.premiered }}</mat-list-item
+              >
+              <mat-list-item
+                >Broadcast: {{ animeDetails.broadcast }}</mat-list-item
+              >
+              <mat-list-item>Source: {{ animeDetails.source }}</mat-list-item>
+              <mat-list-item
+                >Duration: {{ animeDetails.duration }}</mat-list-item
+              >
+              <mat-list-item>Rating: {{ animeDetails.rating }}</mat-list-item>
+            </mat-list>
+          </mat-expansion-panel>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div *ngIf="!loading" fxFlex="70%" fxFlex.lt-md="100%" fxLayout="row">
+    <mat-toolbar>Synopsis</mat-toolbar>
+  </div>
+</div>

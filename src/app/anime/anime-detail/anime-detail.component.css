@@ -1,0 +1,19 @@
+.anime-detail-container {
+  max-width: 90%;
+  width: 100%;
+  overflow: auto;
+  margin: auto;
+}
+
+mat-card img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
+.anime-details-card {
+  width: 100%;
+}
+
+mat-card-content mat-list-item {
+  font-size: 12px;
+}

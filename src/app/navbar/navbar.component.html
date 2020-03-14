@@ -30,4 +30,24 @@
       <button mat-raised-button>Sign Up</button>
     </div>
   </mat-toolbar-row>
+  <mat-toolbar-row>
+    <div
+      *ngIf="isAuthenticated"
+      fxFlex
+      fxLayout
+      fxLayoutAlign="space around"
+      fxLayoutGap="15px"
+    >
+      <div>
+        <button mat-raised-button routerLink="/top-anime">
+          Top Anime (Card-View)
+        </button>
+      </div>
+      <div>
+        <button mat-raised-button routerLink="/top-anime-table">
+          Top Anime (Table-View)
+        </button>
+      </div>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
